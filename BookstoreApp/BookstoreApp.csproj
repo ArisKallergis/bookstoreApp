@@ -191,6 +191,7 @@
     <Compile Include="Models\titleauthor.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\SearchFormViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -405,6 +406,8 @@
     <Content Include="Views\royscheds\Details.cshtml" />
     <Content Include="Views\royscheds\Edit.cshtml" />
     <Content Include="Views\royscheds\Index.cshtml" />
+    <Content Include="Views\authors\Search.cshtml" />
+    <Content Include="Views\authors\Result.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

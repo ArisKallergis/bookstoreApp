@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using BookstoreApp.Models;
+using BookstoreApp.Models.ViewModels;
 
 namespace BookstoreApp.Controllers
 {
@@ -113,6 +114,22 @@ namespace BookstoreApp.Controllers
             db.authors.Remove(author);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Search()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Search([Bind(Include="sales,dateFrom,dateTo")] SearchFormViewModel searchFormData)
+        {
+            return View("Result", searchFormData);
+        }
+
+        public ActionResult Result()
+        {
+            return View();
         }
 
         protected override void Dispose(bool disposing)

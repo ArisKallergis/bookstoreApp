@@ -1,0 +1,25 @@
+﻿@model BookstoreApp.Models.ViewModels.SearchFormViewModel
+
+
+
+@{
+    ViewBag.Title = "Search";
+}
+
+
+
+<h2>Search</h2>
+<form action="@Url.Action("Search","authors")" method="post">
+
+    <input id="sales" name="sales" type="text" />
+    <input id="dateFrom" name="dateFrom" type="date" />
+    <input id="dateTo" name="dateTo" type="date" />
+
+    <input type="submit" value="Search" />
+</form>
+
+    
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
