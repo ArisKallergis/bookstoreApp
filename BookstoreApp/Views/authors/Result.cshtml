@@ -1,4 +1,4 @@
-﻿@model BookstoreApp.Models.ViewModels.SearchFormViewModel
+﻿@model IEnumerable<BookstoreApp.Models.author>
 
 @{
     ViewBag.Title = "Result";
@@ -6,6 +6,16 @@
 
 <h2>Result</h2>
 
-<p>@Model.sales</p>
-<p>@Model.dateFrom</p>
-<p>@Model.dateTo</p>
+
+@foreach (var author in Model)
+{
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => author.au_fname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => author.au_lname)
+    </td>
+
+</tr>
+}

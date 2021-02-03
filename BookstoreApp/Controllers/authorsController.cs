@@ -124,7 +124,24 @@ namespace BookstoreApp.Controllers
         [HttpPost]
         public ActionResult Search([Bind(Include="sales,dateFrom,dateTo")] SearchFormViewModel searchFormData)
         {
-            return View("Result", searchFormData);
+            var dateFrom = searchFormData.dateFrom;
+            var dateTo = searchFormData.dateTo;
+
+            var books = (from book in db.titles
+                         where book.pubdate > dateFrom
+                         where book.pubdate < dateTo
+                         orderby book.ytd_sales descending
+                         select book)
+                           .Take(searchFormData.sales);
+
+            var authors = (from b in books
+                           from author in db.authors
+                           from tauth in db.titleauthors
+                           where tauth.title_id == b.title_id
+                           where tauth.au_id == author.au_id
+                           select author).ToList();
+
+            return View("Result", authors);
         }
 
         public ActionResult Result()
