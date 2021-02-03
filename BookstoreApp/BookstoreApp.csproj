@@ -128,7 +128,18 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\authorsController.cs" />
+    <Compile Include="Controllers\discountsController.cs" />
+    <Compile Include="Controllers\employeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\jobsController.cs" />
+    <Compile Include="Controllers\publishersController.cs" />
+    <Compile Include="Controllers\pub_infoController.cs" />
+    <Compile Include="Controllers\royschedsController.cs" />
+    <Compile Include="Controllers\salesController.cs" />
+    <Compile Include="Controllers\storesController.cs" />
+    <Compile Include="Controllers\titleauthorsController.cs" />
+    <Compile Include="Controllers\titlesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -232,6 +243,7 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
@@ -338,6 +350,61 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\stores\Create.cshtml" />
+    <Content Include="Views\stores\Delete.cshtml" />
+    <Content Include="Views\stores\Details.cshtml" />
+    <Content Include="Views\stores\Edit.cshtml" />
+    <Content Include="Views\stores\Index.cshtml" />
+    <Content Include="Views\authors\Create.cshtml" />
+    <Content Include="Views\authors\Delete.cshtml" />
+    <Content Include="Views\authors\Details.cshtml" />
+    <Content Include="Views\authors\Edit.cshtml" />
+    <Content Include="Views\authors\Index.cshtml" />
+    <Content Include="Views\discounts\Create.cshtml" />
+    <Content Include="Views\discounts\Delete.cshtml" />
+    <Content Include="Views\discounts\Details.cshtml" />
+    <Content Include="Views\discounts\Edit.cshtml" />
+    <Content Include="Views\discounts\Index.cshtml" />
+    <Content Include="Views\sales\Create.cshtml" />
+    <Content Include="Views\sales\Delete.cshtml" />
+    <Content Include="Views\sales\Details.cshtml" />
+    <Content Include="Views\sales\Edit.cshtml" />
+    <Content Include="Views\sales\Index.cshtml" />
+    <Content Include="Views\titleauthors\Create.cshtml" />
+    <Content Include="Views\titleauthors\Delete.cshtml" />
+    <Content Include="Views\titleauthors\Details.cshtml" />
+    <Content Include="Views\titleauthors\Edit.cshtml" />
+    <Content Include="Views\titleauthors\Index.cshtml" />
+    <Content Include="Views\titles\Create.cshtml" />
+    <Content Include="Views\titles\Delete.cshtml" />
+    <Content Include="Views\titles\Details.cshtml" />
+    <Content Include="Views\titles\Edit.cshtml" />
+    <Content Include="Views\titles\Index.cshtml" />
+    <Content Include="Views\employees\Create.cshtml" />
+    <Content Include="Views\employees\Delete.cshtml" />
+    <Content Include="Views\employees\Details.cshtml" />
+    <Content Include="Views\employees\Edit.cshtml" />
+    <Content Include="Views\employees\Index.cshtml" />
+    <Content Include="Views\publishers\Create.cshtml" />
+    <Content Include="Views\publishers\Delete.cshtml" />
+    <Content Include="Views\publishers\Details.cshtml" />
+    <Content Include="Views\publishers\Edit.cshtml" />
+    <Content Include="Views\publishers\Index.cshtml" />
+    <Content Include="Views\jobs\Create.cshtml" />
+    <Content Include="Views\jobs\Delete.cshtml" />
+    <Content Include="Views\jobs\Details.cshtml" />
+    <Content Include="Views\jobs\Edit.cshtml" />
+    <Content Include="Views\jobs\Index.cshtml" />
+    <Content Include="Views\pub_info\Create.cshtml" />
+    <Content Include="Views\pub_info\Delete.cshtml" />
+    <Content Include="Views\pub_info\Details.cshtml" />
+    <Content Include="Views\pub_info\Edit.cshtml" />
+    <Content Include="Views\pub_info\Index.cshtml" />
+    <Content Include="Views\royscheds\Create.cshtml" />
+    <Content Include="Views\royscheds\Delete.cshtml" />
+    <Content Include="Views\royscheds\Details.cshtml" />
+    <Content Include="Views\royscheds\Edit.cshtml" />
+    <Content Include="Views\royscheds\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
