@@ -191,6 +191,8 @@
     <Compile Include="Models\titleauthor.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\OrderSearchFormViewModel.cs" />
+    <Compile Include="Models\ViewModels\OrderSearchResultViewModel.cs" />
     <Compile Include="Models\ViewModels\SearchFormViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -408,6 +410,8 @@
     <Content Include="Views\royscheds\Index.cshtml" />
     <Content Include="Views\authors\Search.cshtml" />
     <Content Include="Views\authors\Result.cshtml" />
+    <Content Include="Views\sales\OrderSearch.cshtml" />
+    <Content Include="Views\sales\OrderSearchResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

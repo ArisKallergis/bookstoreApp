@@ -4,7 +4,7 @@
     ViewBag.Title = "Result";
 }
 
-<h2>Result</h2>
+<h2>Authors found for the specified criteria</h2>
 
 
 <table class="table">
@@ -35,7 +35,7 @@
         </th>
         <th></th>
     </tr>
-    @foreach (var item Model)
+    @foreach (var item in Model)
     {
         <tr>
             <td>

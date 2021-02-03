@@ -8,13 +8,16 @@
 
 
 
-<h2>Search</h2>
+<h2>Search for best-selling authors</h2> <br/>
 <form action="@Url.Action("Search","authors")" method="post">
 
-    <input id="sales" name="sales" type="text" />
-    <input id="dateFrom" name="dateFrom" type="date" value="1980-01-01" />
+    <label for="sales">Enter top X number of books to search by</label>  <br />
+    <input id="sales" name="sales" type="text" /> <br />  <br />
+    <label for="dateFrom">Choose date from which to search</label>  <br />
+    <input id="dateFrom" name="dateFrom" type="date" value="1980-01-01" /> <br />  <br />
+    <label for="dateTo">Choose date until which to search</label> <br />
     <input id="dateTo" name="dateTo" type="date" />
-
+    <br /><br />
     <input type="submit" value="Search" />
 </form>
 

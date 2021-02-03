@@ -1,0 +1,38 @@
+﻿@model IEnumerable<BookstoreApp.Models.ViewModels.OrderSearchResultViewModel>
+
+@{
+    ViewBag.Title = "OrderSearchResult";
+}
+
+<h2>OrderSearchResult</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Order ID
+        </th>
+        <th>
+            Store Name
+        </th>
+        <th>
+            Book Name
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.orderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.storeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bookName)
+            </td>
+
+        </tr>
+    }
+
+</table>

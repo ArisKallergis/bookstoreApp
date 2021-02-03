@@ -1,0 +1,27 @@
+﻿@model BookstoreApp.Models.ViewModels.OrderSearchFormViewModel
+
+@{
+    ViewBag.Title = "OrderSearch";
+}
+
+<h2>Search for specific orders</h2>
+
+<form action="@Url.Action("OrderSearch","sales")" method="post">
+
+    <label for="nameFrom">Enter starting range of store name</label>  <br />
+    <input id="nameFrom" name="nameFrom" type="text" /><br /><br />
+    <label for="nameTo">Enter ending range of store name</label>  <br />
+    <input id="nameTo" name="nameTo" type="text" /><br /><br />
+    <label for="dateFrom">Enter starting range of when order was made</label>  <br />
+    <input id="dateFrom" name="dateFrom" type="date" value="1980-01-01" /><br /><br />
+    <label for="dateTo">Enter starting range of when order was made</label>  <br />
+    <input id="dateTo" name="dateTo" type="date" />
+    <br /><br />
+    <input type="submit" value="Search" />
+</form>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -2,6 +2,7 @@
     ViewBag.Title = "Home Page";
 }
 
+<h1>Administrator</h1>
 <div>
     @Html.ActionLink("List of authors","Index", "authors") <br/>
     @Html.ActionLink("List of discounts", "Index", "discounts") <br/>
@@ -14,6 +15,13 @@
     @Html.ActionLink("List of titleauthors", "Index", "titleauthors") <br/>
     @Html.ActionLink("List of titles", "Index", "titles") <br/>
     @Html.ActionLink("List of roysched", "Index", "royscheds")
+</div>
+
+<h1>User</h1>
+
+<div>
+    @Html.ActionLink("Search for orders by date and by store name", "OrderSearch", "sales") <br />
+    @Html.ActionLink("Search for authors by best-selling books", "Search", "authors")
 </div>
 
 @*<div class="jumbotron">

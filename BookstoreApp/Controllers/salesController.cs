@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using BookstoreApp.Models;
+using BookstoreApp.Models.ViewModels;
 
 namespace BookstoreApp.Controllers
 {
@@ -19,6 +20,63 @@ namespace BookstoreApp.Controllers
         {
             var sales = db.sales.Include(s => s.store).Include(s => s.title);
             return View(sales.ToList());
+        }
+
+        // GET: sales
+        public ActionResult OrderSearch()
+        {
+            
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult OrderSearch([Bind(Include = "nameFrom,nameTo,dateFrom,dateTo")] OrderSearchFormViewModel searchFormData)
+        {
+            var nameFrom = searchFormData.nameFrom;
+            var nameTo = searchFormData.nameTo;
+            var dateFrom = searchFormData.dateFrom;
+            var dateTo = searchFormData.dateTo;
+
+            var orders = from order in db.sales
+                         from book in db.titles
+                         from store in db.stores
+                         where order.ord_date > dateFrom
+                         where order.ord_date < dateTo
+                         where book.title_id == order.title_id
+                         where store.stor_id == order.stor_id
+                         //where store.stor_name[0] > nameFrom
+                         //where store.stor_name[0] < nameTo
+                         select new
+                         {
+                             orderId = order.ord_num,
+                             storeName = store.stor_name,
+                             bookName = book.title1
+                         };
+
+            List<OrderSearchResultViewModel> results = new List<OrderSearchResultViewModel>();
+            foreach (var ord in orders)
+            {
+                results.Add(new OrderSearchResultViewModel(ord.orderId, ord.storeName, ord.bookName));
+            }
+
+            return View("OrderSearchResult",results);
+
+
+            //var books = (from book in db.titles
+            //             where book.pubdate > dateFrom
+            //             where book.pubdate < dateTo
+            //             orderby book.ytd_sales descending
+            //             select book)
+            //               .Take(searchFormData.sales);
+
+            //var authors = (from b in books
+            //               from author in db.authors
+            //               from tauth in db.titleauthors
+            //               where tauth.title_id == b.title_id
+            //               where tauth.au_id == author.au_id
+            //               select author).ToList();
+
+            //return View("Result", authors);
         }
 
         // GET: sales/Details/5
